@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+  background-color:grey;
+  color: linen;
+}
+
+.movieCard {background: blue;
+padding: 20px 20px 20px 20px;
+text-align: center;
+border: 1px solid black;
+margin-bottom: 30px;
+margin-right: 200px;
+margin-left: 200px;
+}
+  
+.movieList {list-style-type: none;
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+grid-column-gap: 6px;
+grid-row-gap:6px;
+display:flex;
+flex-direction: column;
+}
+
+.text{
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+
+.delete{
+  background-color: rgb(35, 26, 77);
+  color: white;
+  margin-left: 90%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.edit{background-color: green;
+color: white;
+cursor: pointer;}
+
+.stars{
+  cursor: pointer;
+  font-size: 50px;
+}
