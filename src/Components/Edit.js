@@ -13,7 +13,7 @@ const Edit = ({movie}) => {
 const [editTitle, setEditTitle] = useState(movie.title) 
 const [editRate, setEditRate] = useState(movie.rate)
 const [editDate, setEditDate] = useState(movie.date)
-const [editImgUrL, setEditImgUrL] = useState(movie.imgUrL)
+const [editImgUrl, setEditImgUrl] = useState(movie.imgUrl)
 const [editDescription, setEditDescription] = useState(movie.description)
 const [editCategory, setEditCategory] = useState(movie.category)
 
@@ -21,12 +21,12 @@ const [modalIsOpen,setIsOpen] = useState(false);
 
 const dispatch = useDispatch() 
 
-const edit = () => {dispatch(editMovie(Math.random(), editTitle, editRate, editDate, editImgUrL, editDescription, editCategory));
-setEditTitle(''); setEditRate(0); setEditDate(''); setEditImgUrL(''); setEditDescription(''); setEditCategory(''); setIsOpen(false)}
+const edit = () => {dispatch(editMovie({_id: movie._id, title: editTitle, rate: editRate, date: editDate, imgUrl: editImgUrl, description: editDescription, category: editCategory},movie._id))
+setEditTitle(''); setEditRate(0); setEditDate(''); setEditImgUrl(''); setEditDescription(''); setEditCategory(''); setIsOpen(false)}
 
 return (
     <div>
-        <button className="edit" onClick={() => setIsOpen(true)}>EDIT</button>  
+        <button className="edit" onClick={() => setIsOpen(true)}>EDIT MOVIE</button>  
         <Modal isOpen={modalIsOpen}>
         <Form>
             <Form.Group controlId="formBasicTitle">
@@ -43,7 +43,7 @@ return (
             </Form.Group>
             <Form.Group controlId="formBasicImage">
                 <Form.Label>NEW Image</Form.Label>
-                <Form.Control type="text" placeholder="add new image" value={editImgUrL} onChange={e => setEditImgUrL(e.target.value)}/>
+                <Form.Control type="text" placeholder="add new image" value={editImgUrl} onChange={e => setEditImgUrl(e.target.value)}/>
             </Form.Group>
             <Form.Group controlId="formBasicDescription">
                 <Form.Label>NEW Description</Form.Label>

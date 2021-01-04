@@ -8,10 +8,10 @@ export const DisplayMovies = payload => {
     }
 }
 
-export const AddMovie = payload => {
+export const addMovie = newMovie => {
     return {
     type: ADD_MOVIE,
-    payload
+    payload: newMovie
 }
 }
 
@@ -22,10 +22,11 @@ export const deleteMovie = id => {
     }
 }
 
-export const editMovie = (_id,title, rate, date, imgUrl, description, category) => {
+export const editMovie = (editedMovie,ID) => {
     return {
         type: EDIT_MOVIE,
-        payload: {_id,title, rate, date, imgUrl, description, category}
+        payload: {editedMovie,ID}
+
     }
 }
 

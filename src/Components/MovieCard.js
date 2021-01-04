@@ -26,7 +26,7 @@ return (
         <button className="delete" onClick={() => dispatch(deleteMovie(movie._id))}>X</button>
         <h2> <span className="text">Movie Title:</span> {movie.title}</h2>
         <h5><span className="text">Date:</span> {movie.date}</h5>
-        <img src={movie.imgUrL} alt={movie.title}/>
+        <img src={movie.imgUrl} alt={movie.title}/>
         <p><span className="text">Rate:</span> {stars(movie.rate)}</p>
         <p><span className="text">Description:</span> {movie.description}</p>
         <h4><span className="text">Category:</span> {movie.category}</h4>

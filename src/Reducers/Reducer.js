@@ -18,13 +18,8 @@ export const Reducer = (state = initialState, action) =>
 
         case EDIT_MOVIE: return {
 
-            ...state, Movies: state.Movies.map(movie => movie._id === action.payload._id ? 
+            ...state, Movies: state.Movies.map(movie => movie._id === action.payload.ID ? action.payload.editedMovie : movie)}
 
-            {...movie, title: action.payload.title, rate: action.payload.rate, date: action.payload.date, imgUrl: action.payload.imgUrl, 
-            description: action.payload.description,category: action.payload.category} 
-
-            : movie)
-            }
 
         case DELETE_MOVIE: return {
             ...state, Movies: state.Movies.filter(movie => movie._id !== action.payload)

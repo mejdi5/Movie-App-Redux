@@ -24,7 +24,8 @@ axios.get("https://movie-app-gmc.herokuapp.com/api/movies")
     <ul className="movieList">
     {!loading && (<Spinner animation="border" />) }
     
-    {movies.filter(movie => movie.title.toLowerCase().includes(FilterString.toLowerCase().trim()) && movie.rate === Rating)
+    {movies
+    //.filter(movie => movie.title.toLowerCase().includes(FilterString.toLowerCase().trim()) && movie.rate >= Rating)
     .map((movie,i) => <li> <MovieCard key = {i}  movie = {movie} /> </li>)}
     </ul>
 )

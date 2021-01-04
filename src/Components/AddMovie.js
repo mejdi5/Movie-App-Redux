@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { useDispatch } from "react-redux";
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import {addMovie} from '../Actions/Actions'
 
 
 
@@ -12,7 +13,7 @@ const AddMovie = () => {
 const [title, setTitle] = useState('')
 const [rate, setRate] = useState(0)
 const [date, setDate] = useState('')
-const [imgUrL, setImgUrL] = useState('')
+const [imgUrl, setImgUrl] = useState('')
 const [description, setDescription] = useState('')
 const [category, setCategory] = useState('')
     
@@ -20,13 +21,16 @@ const [modalIsOpen,setIsOpen] = useState(false);
     
 const dispatch = useDispatch()
     
-const Add = () => {dispatch(AddMovie({_id: Math.random(), title: title, rate: rate, date: date, image: imgUrL, description: description, category: category}));
-                        setTitle(''); setRate(0); setDate(''); setImgUrL(''); setDescription(''); setCategory('')}
+const Add = () => {dispatch(addMovie({_id: Math.random(), title: title, rate: rate, date: date, image: imgUrl,
+     description: description, 
+     category: category}));
+                        setTitle('');
+                         setRate(0); setDate(''); setImgUrl(''); setDescription(''); setCategory('')}
 
 
 return (
     <div>   
-    <button onClick={() => setIsOpen(true)}>Add</button>  
+    <button className="add-btn" onClick={() => setIsOpen(true)}>ADD MOVIE</button>  
         <Modal isOpen={modalIsOpen}>
         <Form>
             <Form.Group controlId="formBasicTitle">
@@ -43,7 +47,7 @@ return (
             </Form.Group>
             <Form.Group controlId="formBasicImage">
                 <Form.Label>Image</Form.Label>
-                <Form.Control type="text" placeholder="add image" value={imgUrL} onChange={e => setImgUrL(e.target.value)} required/>
+                <Form.Control type="text" placeholder="add image" value={imgUrl} onChange={e => setImgUrl(e.target.value)} required/>
             </Form.Group>
             <Form.Group controlId="formBasicDescription">
                 <Form.Label>Description</Form.Label>
